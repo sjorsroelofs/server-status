@@ -1,4 +1,4 @@
-server-status
+What's my server status?!
 =============
 
-Simple php script to check the online status of your server(s)
+A simple PHP script to check the online status of your server(s).
