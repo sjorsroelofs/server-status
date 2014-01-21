@@ -10,13 +10,12 @@ Install instructions:
 
 
 ToDo:
--	Cleanup check.php
--	Create HTML output method
 -	Create email notifier
 -	Check cron functionality
--	Create BoxCar push service
 -	Create better instructions for setting up cronjobs
+-	Create instructions for setting up a Boxcar service
 
 
 Potential ToDo:
-- Create log functionality
+-	Create log functionality
+-	Create functionality to prevent cron-spam when a server is down for a longer period

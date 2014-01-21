@@ -14,7 +14,7 @@ class Host {
 		$this->port		= $port;
 	}
 		
-	public function isHostAvailable() {
+	public function isAvailable() {
 		$connection = @fsockopen(self::getHost(), self::getPort(), $errorno, $errstr, 10);
 		
 		if($connection) {

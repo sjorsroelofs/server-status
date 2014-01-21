@@ -1,27 +1,14 @@
 <?php
 
+require_once('config.php');
 require_once('classes/Host.php');
+require_once('classes/ServerChecker.php');
 require_once('hosts.php');
 
 
-echo '<table>';
-echo '<tr><th>Host</th><th>Status</th><th>Error code</th><th>Error description</th></tr>';
-foreach($hosts as $host) {
-	$error = $host->getError();
+$serverChecker = new ServerChecker($hosts, BOXCAR_API_KEY, BOXCAR_API_SEC, BOXCAR_EMAIL);
+$serverChecker->printResultsHtml();
 
-	echo '<tr>';
-		echo '<td>' . $host->getTitle() . '</td>';
-		echo '<td>';
-			echo ($host->isHostAvailable()) ? 'Available': 'Down';
-		echo '</td>';
-		echo '<td>' . $error['errorno'] . '</td>';
-		echo '<td>' . $error['errstr'] . '</td>';
-	echo '</tr>';
+if(SEND_PUSH) {
+	$serverChecker->sendPushMessage();
 }
-echo '<table>';
-
-
-
-echo '<pre>';
-print_r($hosts);
-echo '</pre>';
