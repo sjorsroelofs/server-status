@@ -14,7 +14,7 @@ Server requirements:
 -	Apache
 -	PHP 5(+)
 -	CURL (configured with PHP)
--	Any cronjob program
+-	Any cronjob software
 
 
 Setting up a cronjob on Ubuntu with Crontab:
@@ -33,7 +33,6 @@ Setting up a cronjob on Ubuntu with Crontab:
 
 ToDo:
 -	Create email notifier
--	Check cron functionality
 -	Create instructions for setting up a Boxcar service
 
 
