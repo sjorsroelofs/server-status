@@ -7,6 +7,7 @@
  * If you're using push, you NEED to insert the Boxcar values
  */
 define('SEND_PUSH',			false);
+define('PRINT_HTML',		true);
 define('BOXCAR_API_KEY',	'');
 define('BOXCAR_API_SEC',	'');
 define('BOXCAR_EMAIL',		'');

@@ -1,7 +1,5 @@
 <?php
 
-require_once('classes/BoxcarApi.php');
-
 class ServerChecker {
 	
 	private $hosts;
