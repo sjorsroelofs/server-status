@@ -23,25 +23,18 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-require_once('config.php');
-require_once('classes/Host.php');
-require_once('classes/BoxcarApi.php');
-require_once('classes/MailClient.php');
-require_once('classes/ServerChecker.php');
-require_once('hosts.php');
-
-
-$serverChecker = new ServerChecker($hosts, USER_EMAIL, BOXCAR_API_KEY, BOXCAR_API_SEC, BOXCAR_EMAIL);
-
-
-if(PRINT_HTML) {
-	$serverChecker->printResultsHtml();
-}
-
-if(SEND_EMAIL) {
-	$serverChecker->sendMailMessage();
-}
-
-if(SEND_PUSH) {
-	$serverChecker->sendPushMessage();
+class MailClient {
+	
+	private $emailAddress;
+	
+	public function MailClient($emailAddress) {
+		$this->emailAddress = $emailAddress;
+	}
+	
+	public function sendMail($message) {
+		if(!empty($message) && !empty($this->emailAddress)) {
+			mail($this->emailAddress, 'Server status', $message);
+		}
+	}
+	
 }

@@ -1,7 +1,7 @@
 What's my server status?!
 =============
 
-A simple PHP script to check the online status of your server(s).
+A simple PHP script to check the online status of your server(s) and get notifications by Mail or Boxcar (iOS push notifications).
 
 Install instructions:
 -	Change hosts.example.php to hosts.php and add your hosts to the array
@@ -18,22 +18,23 @@ Server requirements:
 
 
 Setting up a cronjob on Ubuntu with Crontab:
--	Be sure that you've cloned the repo from GitHub to your server, and you
+-	Be sure that you've got a copy of the repo from GitHub on your server, and you
 	know the absolute path to it
--	Be sure you have installed PHP on your server, and you know the absolute
-	path to it (for instance "/usr/bin/php")
+-	Be sure you know the absolute path to your php install (e.g. "/usr/bin/php")
 -	If you haven't installed Crontab already, do it by running the command
 	"sudo apt-get install gnome-schedule"
 -	Run "crontab -e" and select your favourite editor
 -	At the end of the file, add your cron rule "*/10 * * * * [absolute path
-	to your php installation] -q [absolute path to the check.php file in your
-	cloned repo]". This will run the script once every 10 minutes
+	to your php installation] -q [absolute path to the check.php file]".
+	This will run the script once every 10 minutes
 -	Save the file and off you go! :)
+-	To check if the script is functioning, you can run
+	"sudo [absolute path to php] [absolute path to check.php]"
 
 
 ToDo:
--	Create email notifier
 -	Create instructions for setting up a Boxcar service
+-	Catch Boxcar errors when unable to send message
 
 
 Potential ToDo:
